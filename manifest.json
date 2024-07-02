@@ -7,12 +7,15 @@
       "default_popup": "hello.html"
   },
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "storage",
+    "scripting"
   ],
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "js": ["./scripts/content.js"]
+      "matches": ["https://*/*", "http://*/*"],
+      "js": ["./scripts/content.js"],
+      "run_at": "document_idle"
     }
   ]
 }

@@ -1,16 +1,19 @@
-console.log("hello world");
-// Function to handle input events
-function handleInput(event) {
-    console.log(`User is typing: ${event.target.value}`);
-}
 
-// Attach event listeners to all input and textarea elements
 function attachInputListeners() {
-    const inputs = document.querySelectorAll('input, textarea');
-    inputs.forEach(input => {
+    alert('Hello from content.js!');
+    const input = document.getElementById('prompt-textarea');
+    if (input) {
         input.addEventListener('input', handleInput);
-    });
+    } else {
+        alert('Input element not found');
+    }
 }
 
-// Attach listeners when the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', attachInputListeners);
+function handleInput(event) {
+    const value = event.target.value;
+    console.log(`User is typing: ${value}`);
+    alert(`User is typing: ${value}`);
+}
+
+attachInputListeners(); // Correct function name
+
